@@ -8,14 +8,21 @@
                 <th scope="col">First Name</th>
                 <th scope="col">Last Name</th>
                 <th scope="col">Email</th>
+                <th scope="col">Actions</th>
             </tr>
         </thead>
         <tbody>
             {{#each data}}
             <tr>
-                <td>#<b>&nbsp;{{@index}}</b>{{firstName}}</td>
+                <td>#
+                    <b>&nbsp;{{@index}}&nbsp;</b>{{firstName}}</td>
                 <td>{{lastName}}</td>
                 <td>{{email}}</td>
+                <td>
+                    <a href="/edit">
+                        <img src="images/glyphicons/png/glyphicons-151-edit.png" alt="">
+                    </a>
+                </td>
             </tr>
             {{/each}}
         </tbody>

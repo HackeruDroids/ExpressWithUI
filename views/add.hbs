@@ -1,11 +1,10 @@
-{{!--action: to which route should I send the form content?--}}
-<form action="/add" method="POST" >
-  <input placeholder="First Name" type="text" name="firstName">
-  <input placeholder="Last Name" type="text" name="lastName">
-  <input placeholder="Email" type="email" name="email">
+{{#if showModal}}
+  <h2>{{message}}</h2>
+{{/if}}
+<form class="form-bordered form-group" action="/add" method="POST">
+  <input class="form-control" placeholder="First Name" type="text" name="firstName">
+  <input class="form-control" placeholder="Last Name" type="text" name="lastName">
+  <input class="form-control" placeholder="Email" type="email" name="email">
 
-
-
-  
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>

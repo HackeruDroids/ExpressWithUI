@@ -24,15 +24,20 @@ app.get('/students', (req, res) => {
 });
 
 app.get('/add', (req, res) => {
-  res.render('add', { title: 'Add Studnet' })
+  res.render('add', { title: 'Add Studnet'})
 })
 
 app.post('/add', (req, res) => {
-  students.push(req.body)
- res.redirect('/students')
+  //take the parameters from the request->body
+  var student = req.body
+
+  //push the student into the array
+  students.push(student)
+
+  //respond
+  res.render('add', { title: 'Add Student', showModal: true, message: 'הפריט נוסף בהצלחה' })
+
 })
-
-
 
 
 
