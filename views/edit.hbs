@@ -1,0 +1,11 @@
+{{#if showModal}}
+<h2>{{message}}</h2>
+{{/if}} {{#with data}}
+<form class="form-bordered form-group" action="/edit" method="POST">
+  <input value="{{firstName}}" class="form-control" placeholder="First Name" type="text" name="firstName">
+  <input value="{{lastName}}" class="form-control" placeholder="Last Name" type="text" name="lastName">
+  <input value="{{email}}" class="form-control" placeholder="Email" type="email" name="email">
+  {{/with}}
+  <input type="hidden" name="id" value="{{id}}">
+  <button type="submit" class="btn btn-primary">Done!</button>
+</form>

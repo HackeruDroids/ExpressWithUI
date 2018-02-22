@@ -1,5 +1,15 @@
 <h1>{{title}}</h1>
 
+
+<div class="jumbotron">
+    <h1 class="display-4">Merav College</h1>
+    <p class="lead">Merav is our Hero!</p>
+    <hr class="my-4">
+    <p class="lead">
+        <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+    </p>
+</div>
+
 <hr>
 <p>
     <table class="table table-hover">
@@ -19,9 +29,36 @@
                 <td>{{lastName}}</td>
                 <td>{{email}}</td>
                 <td>
-                    <a href="/edit">
+                    <a href="/edit?id={{@index}}">
                         <img src="images/glyphicons/png/glyphicons-151-edit.png" alt="">
                     </a>
+
+                    <img data-toggle="modal" data-target="#are-you-sure-modal" src="images/glyphicons/png/glyphicons-17-bin.png" alt="">
+
+
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="are-you-sure-modal-{{@index}}" tabindex="-1" role="dialog" aria-labelledby="are-you-sure-modal-Label" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="are-you-sure-modal-Label">Are You Sure?</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                {{!--
+                                <div class="modal-body">
+
+                                </div> --}}
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">No!</button>
+                                    <button type="button" class="btn btn-primary">Delete</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </td>
             </tr>
             {{/each}}
@@ -29,3 +66,11 @@
     </table>
 
 </p>
+
+
+
+
+
+<script>
+    //var arr = document.querySelector('[data-targat]')
+</script>

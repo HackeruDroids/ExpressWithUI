@@ -24,7 +24,7 @@ app.get('/students', (req, res) => {
 });
 
 app.get('/add', (req, res) => {
-  res.render('add', { title: 'Add Studnet'})
+  res.render('add', { title: 'Add Studnet' })
 })
 
 app.post('/add', (req, res) => {
@@ -39,12 +39,36 @@ app.post('/add', (req, res) => {
 
 })
 
+app.get('/edit', (req, res) => {
+  var id = req.query.id
+  console.log("id", id)
+  //console.log({ title: 'Edit Student', data: students[id] })
+  res.render('edit', { title: 'Edit Student', data: students[id], id: id })
+})
+
+
+
+app.post('/edit', (req, res)=>{
+  var student = req.body
+  var id = student.id
+  students[id] = student
+
+  res.redirect('/students')
+})
+
+
+
+app.get('/', (req, res)=>{res.redirect('/students')})
+
+
+
 
 
 
 app.get('/api/students', (req, res) => {
   res.json({ studentsdata: students })
 });
+
 
 
 
