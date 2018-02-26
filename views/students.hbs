@@ -1,6 +1,5 @@
 <h1>{{title}}</h1>
 
-
 <div class="jumbotron">
     <h1 class="display-4">Merav College</h1>
     <p class="lead">Merav is our Hero!</p>
@@ -29,48 +28,36 @@
                 <td>{{lastName}}</td>
                 <td>{{email}}</td>
                 <td>
-                    <a href="/edit?id={{@index}}">
+                    <a class="no-underline" href="/edit?id={{@index}}">
                         <img src="images/glyphicons/png/glyphicons-151-edit.png" alt="">
                     </a>
-
-                    <img data-toggle="modal" data-target="#are-you-sure-modal" src="images/glyphicons/png/glyphicons-17-bin.png" alt="">
-
+                    <!--  data-toggle & data-target triggers modal -->
+                    <img  data-toggle="modal" data-target="#exampleModal-{{@index}}" class="btn" src="images/glyphicons/png/glyphicons-17-bin.png" alt="">
 
 
                     <!-- Modal -->
-                    <div class="modal fade" id="are-you-sure-modal-{{@index}}" tabindex="-1" role="dialog" aria-labelledby="are-you-sure-modal-Label" aria-hidden="true">
-                        <div class="modal-dialog" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="are-you-sure-modal-Label">Are You Sure?</h5>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                </div>
-                                {{!--
-                                <div class="modal-body">
-
-                                </div> --}}
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">No!</button>
-                                    <button type="button" class="btn btn-primary">Delete</button>
-                                </div>
-                            </div>
+                    <div class="modal fade" id="exampleModal-{{@index}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Are you sure?</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                           Are you sure you want to delete {{firstName}}?
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                            <button type="button" class="btn btn-primary"  data-dismiss="modal">Delete</button>
+                        </div>
                         </div>
                     </div>
-
+                    </div>
                 </td>
             </tr>
             {{/each}}
         </tbody>
     </table>
-
 </p>
-
-
-
-
-
-<script>
-    //var arr = document.querySelector('[data-targat]')
-</script>
